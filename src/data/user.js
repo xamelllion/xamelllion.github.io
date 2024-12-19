@@ -1,24 +1,20 @@
 const INFO = {
 	main: {
-		title: "Reactfolio by truethari",
+		title: "Сидоров Вячеслав",
 		name: "Tharindu N.",
 		email: "mail@tharindu.dev",
 		logo: "../logo.png",
 	},
 
 	socials: {
-		twitter: "https://twitter.com/",
-		github: "https://github.com/",
-		linkedin: "https://linkedin.com/",
-		instagram: "https://instagram.com/",
-		stackoverflow: "https://stackoverflow.com/",
-		facebook: "https://facebook.com/",
+		github: "https://github.com/xamelllion",
+		vk: "https://vk.com/xamelllion",
+		tg: "https://t.me/xamelllion",
 	},
 
 	homepage: {
-		title: "Full-stack web and mobile app developer, and amateur astronaut.",
-		description:
-			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills. I am passionate about creating high-quality code that follows best practices and industry standards. I am always looking for new challenges and opportunities to grow as a developer.",
+		title: "Сидоров Вячеслав",
+		description: "",
 	},
 
 	about: {
@@ -35,49 +31,32 @@ const INFO = {
 
 	projects: [
 		{
-			title: "Project 1",
+			title: "Graph analysis app",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
+				"Приложение для визуализации графов.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
+			linkText: "Подробнее",
+			link: "https://github.com/spbu-coding-2023/graphs-graph-10",
 		},
 
 		{
-			title: "Project 2",
+			title: "OCamlRV",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-			linkText: "View Project",
-			link: "https://github.com",
+				"Интерпретатор мини версии языка OCaml (в разработке).",
+			logo: "https://github.com/ocaml/ocaml-logo/blob/master/Colour/PNG/colour-icon.png?raw=true",
+			linkText: "Подробнее",
+			link: "https://github.com/xamelllion/OCamlRV",
 		},
 
 		{
-			title: "Project 3",
+			title: "bdd",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: "https://github.com",
+				"Модуль ядра для лог-структурированного хранения данных.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/c/c.png",
+			linkText: "Подробнее",
+			link: "https://github.com/xamelllion/bdd",
 		},
 
-		{
-			title: "Project 4",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 5",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
 	],
 };
 

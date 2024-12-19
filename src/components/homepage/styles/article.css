@@ -7,6 +7,15 @@
 	opacity: 0.8;
 }
 
+.homepage-articles-title {
+	width: 90%;
+	mix-blend-mode: normal;
+	border-radius: 20px;
+	opacity: 0.8;
+	padding: 20px 30px;
+	font-size: 24px;
+}
+
 .homepage-article:hover {
 	background: #fafafa;
 	opacity: 1;

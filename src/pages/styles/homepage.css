@@ -27,6 +27,11 @@
 	width: 85% !important;
 }
 
+.about-me p {
+	margin: 5px 0;
+	font-family: var(--secondary-font);
+}
+
 .homepage-subtitle {
 	width: 85% !important;
 }

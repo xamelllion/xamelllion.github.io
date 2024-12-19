@@ -26,6 +26,13 @@
 	color: var(--secondary-color);
 }
 
+.work-desc {
+	font-size: 14px;
+	color: var(--secondary-color);
+	/* padding-top: 22px; */
+	/* padding-left: 50px; */
+}
+
 .work-subtitle {
 	position: absolute;
 	font-size: 12px;

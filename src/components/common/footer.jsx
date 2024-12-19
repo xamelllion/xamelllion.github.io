@@ -8,7 +8,7 @@ const Footer = () => {
 		<React.Fragment>
 			<div className="footer">
 				<div className="footer-links">
-					<ul className="footer-nav-link-list">
+					{/* <ul className="footer-nav-link-list">
 						<li className="footer-nav-link-item">
 							<Link to="/">Home</Link>
 						</li>
@@ -24,12 +24,12 @@ const Footer = () => {
 						<li className="footer-nav-link-item">
 							<Link to="/contact">Contact</Link>
 						</li>
-					</ul>
+					</ul> */}
 				</div>
 
 				<div className="footer-credits">
 					<div className="footer-credits-text">
-						© 2023 Tharindu.dev. All Rights Reserved.
+						© 2024 Сидоров Вячеслав
 					</div>
 				</div>
 			</div>
