@@ -17,9 +17,53 @@ import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 
+const vkFunc = () => {
+	if ('VKIDSDK' in window) {
+		const VKID = window.VKIDSDK;
+
+		VKID.Config.init({
+			app: 52871599,
+			redirectUrl: 'https://xamelllion.ru',
+			responseMode: VKID.ConfigResponseMode.Callback,
+			source: VKID.ConfigSource.LOWCODE,
+			scope: '', // Заполните нужными доступами по необходимости
+		});
+
+		const oneTap = new VKID.OneTap();
+
+		oneTap.render({
+			container: document.getElementById("vkAuth"),
+			showAlternativeLogin: true
+		})
+		.on(VKID.WidgetEvents.ERROR, vkidOnError)
+		.on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+			const code = payload.code;
+			const deviceId = payload.device_id;
+
+			VKID.Auth.exchangeCode(code, deviceId)
+			.then(vkidOnSuccess)
+			.catch(vkidOnError);
+		});
+		
+		function vkidOnSuccess(data) {
+			// Обработка полученного результата
+			console.log(data)
+		}
+		
+		function vkidOnError(error) {
+			// Обработка ошибки
+			console.log(error)
+		}
+	}
+}
+
 const Homepage = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+	}, []);
+
+	useEffect(() => {
+		vkFunc()
 	}, []);
 
 	return (
@@ -27,6 +71,8 @@ const Homepage = () => {
 			<div className="page-content">
 				{/* <NavBar active="home" /> */}
 				<div className="content-wrapper">
+					<div className="authDiv" id="vkAuth">
+					</div>
 					<div className="homepage-logo-container">
 						{/* <div style={logoStyle}>
 							<Logo width={logoSize} link={false} />

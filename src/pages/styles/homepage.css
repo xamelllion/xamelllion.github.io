@@ -1,5 +1,11 @@
 @import "../../data/styles.css";
 
+.authDiv {
+	color: white;
+	max-width: 300px;
+	padding: 10px;
+}
+
 .homepage-logo-container {
 	display: flex;
 	justify-content: left;
