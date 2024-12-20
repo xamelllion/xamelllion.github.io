@@ -48,7 +48,7 @@ const vkFunc = () => {
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
-			fetch(`http://79.137.198.5:8080`, {
+			fetch(`https://c37e-2a0b-4140-da02-00-2.ngrok-free.app`, {
 				method: 'POST',
 				body: JSON.stringify(data),
 				headers: {
