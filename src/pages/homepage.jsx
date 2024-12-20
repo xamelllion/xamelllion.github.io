@@ -23,7 +23,7 @@ const vkFunc = () => {
 
 		VKID.Config.init({
 			app: 52871599,
-			redirectUrl: 'https://xamelllion.github.io/',
+			redirectUrl: 'https://xamelllion.ru/',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
 			scope: '',
