@@ -23,10 +23,10 @@ const vkFunc = () => {
 
 		VKID.Config.init({
 			app: 52871599,
-			redirectUrl: 'https://xamelllion.github.io',
+			redirectUrl: 'https://15a3-195-70-217-70.ngrok-free.app/',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
-			scope: '', // Заполните нужными доступами по необходимости
+			scope: '',
 		});
 
 		const oneTap = new VKID.OneTap();
@@ -78,8 +78,7 @@ const Homepage = () => {
 			<div className="page-content">
 				{/* <NavBar active="home" /> */}
 				<div className="content-wrapper">
-					<div className="authDiv" id="vkAuth">
-					</div>
+					<div className="authDiv" id="vkAuth"></div>
 					<div className="homepage-logo-container">
 						{/* <div style={logoStyle}>
 							<Logo width={logoSize} link={false} />
