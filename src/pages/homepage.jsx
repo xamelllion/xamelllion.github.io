@@ -23,7 +23,7 @@ const vkFunc = () => {
 
 		VKID.Config.init({
 			app: 52871599,
-			redirectUrl: 'https://xamelllion.ru',
+			redirectUrl: 'https://xamelllion.github.io',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
 			scope: '', // Заполните нужными доступами по необходимости
@@ -33,6 +33,7 @@ const vkFunc = () => {
 
 		oneTap.render({
 			container: document.getElementById("vkAuth"),
+			fastAuthEnabled: false,
 			showAlternativeLogin: true
 		})
 		.on(VKID.WidgetEvents.ERROR, vkidOnError)
@@ -46,8 +47,14 @@ const vkFunc = () => {
 		});
 		
 		function vkidOnSuccess(data) {
-			// Обработка полученного результата
 			console.log(data)
+			fetch(`http://79.137.198.5:8080`, {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: {
+				  "Content-Type": "application/json",
+				},
+			  }).then(response => console.log(response))
 		}
 		
 		function vkidOnError(error) {
