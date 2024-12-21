@@ -116,6 +116,7 @@ const Homepage = () => {
 	const handleExit = () => {
 		localStorage.removeItem('user')
 		setShowExit(false)
+		setText('')
 	}
 
 	return (
