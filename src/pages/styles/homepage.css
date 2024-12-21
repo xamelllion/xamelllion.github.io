@@ -6,6 +6,12 @@
 	padding: 10px;
 }
 
+.exitDiv {
+	color: black;
+	/* min-width: 210px; */
+	padding: 10px;
+}
+
 .login_btns {
 	display: flex;
 	/* max-width: 300px; */
