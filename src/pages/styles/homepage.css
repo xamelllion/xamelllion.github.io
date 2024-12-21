@@ -1,9 +1,49 @@
 @import "../../data/styles.css";
 
 .authDiv {
-	color: white;
-	max-width: 210px;
+	color: black;
+	min-width: 210px;
 	padding: 10px;
+}
+
+.login_btns {
+	display: flex;
+	/* max-width: 300px; */
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+
+.login-container {
+	text-align: center;
+}
+
+.github-login-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #fff;
+	background-color: #333;
+	border: none;
+	padding: 11px 20px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.github-login-button:hover {
+	background-color: #24292e;
+}
+
+.github-icon {
+	width: 20px;
+	height: 20px;
 }
 
 .homepage-logo-container {
