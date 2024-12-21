@@ -48,7 +48,7 @@ const vkFunc = (setText) => {
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
-			fetch(`https://662c-217-197-4-116.ngrok-free.app`, {
+			fetch(`https://ac0c-79-137-198-5.ngrok-free.app`, {
 				method: 'POST',
 				body: JSON.stringify(data),
 				headers: {
@@ -101,20 +101,18 @@ const Homepage = () => {
 			let client_id = 'Ov23linoET1lxEihRl8w'
 			let client_secret = '2c9b9cc2bb54eb1f2ab9b48513558e0940373632'
 
-			let url = `https://github.com/login/oauth/access_token`
-
-			fetch(url, {
+			fetch(`https://ac0c-79-137-198-5.ngrok-free.app/github`, {
 				method: 'POST',
 				body: JSON.stringify({
-					client_id: client_id,
-					client_secret: client_secret,
 					code: code_param
 				}),
 				headers: {
-				"Accept": "application/json",
+				  "Content-Type": "application/json",
 				},
-				mode: 'no-cors'
-			}).then(response =>console.log(response))
+			  }).then(response =>response.json())
+			  .then(data => {
+				console.log(data)
+			  })
 
 		
 		}
