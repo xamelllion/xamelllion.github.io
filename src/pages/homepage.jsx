@@ -6,7 +6,7 @@ import {
 	faVk,
 	faTelegram
 } from "@fortawesome/free-brands-svg-icons";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Footer from "../components/common/footer";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
@@ -69,6 +69,14 @@ const vkFunc = (setText) => {
 }
 
 const Homepage = () => {
+	const [searchParams, setSearchParams] = useSearchParams();
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/");
+    }
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -84,14 +92,37 @@ const Homepage = () => {
 		}
 	}, []);
 
-	const [searchParams, setSearchParams] = useSearchParams();
-
 	useEffect(() => {
 		let code_param = searchParams.get("code")
-		if (code_param != undefined) {
+		if (code_param !== null) {
 			console.log(code_param)
+            localStorage.setItem('code', code_param)
 		}
-	});
+        let client_id = 'Ov23linoET1lxEihRl8w'
+        let client_secret = '2c9b9cc2bb54eb1f2ab9b48513558e0940373632'
+
+        let url = `https://github.com/login/oauth/access_token`
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                client_id: client_id,
+                client_secret: client_secret,
+                code: code_param
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: 'no-cors'
+          }).then(response =>response)
+          .then(data => {
+            console.log(data)
+            // localStorage.setItem('userG', JSON.stringify(data))
+          })
+
+
+        // handleClick()
+	}, []);
 
 	return (
 		<React.Fragment>
