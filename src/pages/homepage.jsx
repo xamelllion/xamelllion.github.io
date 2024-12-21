@@ -48,7 +48,7 @@ const vkFunc = (setText) => {
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
-			fetch(`https://ac0c-79-137-198-5.ngrok-free.app`, {
+			fetch(`https://xmllln.ru.app`, {
 				method: 'POST',
 				body: JSON.stringify(data),
 				headers: {
@@ -101,7 +101,7 @@ const Homepage = () => {
 			let client_id = 'Ov23linoET1lxEihRl8w'
 			let client_secret = '2c9b9cc2bb54eb1f2ab9b48513558e0940373632'
 
-			fetch(`https://ac0c-79-137-198-5.ngrok-free.app/github`, {
+			fetch(`https://xmllln.ru/github`, {
 				method: 'POST',
 				body: JSON.stringify({
 					code: code_param
@@ -116,8 +116,6 @@ const Homepage = () => {
 
 		
 		}
-
-
         // handleClick()
 	}, []);
 
