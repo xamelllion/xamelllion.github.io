@@ -58,7 +58,7 @@ const vkFunc = (setText) => {
 			  .then(data => {
 				console.log(data)
 				localStorage.setItem('user', JSON.stringify(data))
-				setText(`Добрый день ${data.firstname} ${data.lastname}!`)
+				setText(`Добрый день ${data.name}!`)
 			  })
 		}
 		
@@ -70,12 +70,7 @@ const vkFunc = (setText) => {
 
 const Homepage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
-
     const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate("/");
-    }
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -86,9 +81,9 @@ const Homepage = () => {
 	useEffect(() => {
 		vkFunc(setText)
 		let user_data = localStorage.getItem('user')
-		if (user_data != undefined) {
+		if (user_data !== null) {
 			let info = JSON.parse(user_data)
-			setText(`Добрый день ${info.firstname} ${info.lastname}!`)
+			setText(`Добрый день ${info.name}!`)
 		}
 	}, []);
 
@@ -96,11 +91,6 @@ const Homepage = () => {
 		let code_param = searchParams.get("code")
 		if (code_param !== null) {
 			console.log(code_param)
-            localStorage.setItem('code', code_param)
-		
-			let client_id = 'Ov23linoET1lxEihRl8w'
-			let client_secret = '2c9b9cc2bb54eb1f2ab9b48513558e0940373632'
-
 			fetch(`https://xmllln.ru/github`, {
 				method: 'POST',
 				body: JSON.stringify({
@@ -112,17 +102,16 @@ const Homepage = () => {
 			  }).then(response =>response.json())
 			  .then(data => {
 				console.log(data)
+				localStorage.setItem('user', JSON.stringify(data))
+				setText(`Добрый день ${data.name}!`)
 			  })
-
-		
 		}
-        // handleClick()
+        navigate("/");
 	}, []);
 
 	return (
 		<React.Fragment>
 			<div className="page-content">
-				{/* <NavBar active="home" /> */}
 				<div className="content-wrapper">
 					<div className="header">
 						<div className="login_btns">
