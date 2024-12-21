@@ -125,7 +125,6 @@ const Homepage = () => {
 				<div className="content-wrapper">
 					<div className="header">
 						<div className="login_btns">
-							<div style={{display: showExit === false ? 'block' : 'none' }} className="authDiv" id="vkAuth"></div>
 							<div style={{display: showExit === false ? 'block' : 'none' }} className="authDiv">
 								<div className="login-container">
 									<a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=Ov23linoET1lxEihRl8w" className="github-login-button">
@@ -136,6 +135,7 @@ const Homepage = () => {
 									</a>
 								</div>
 							</div>
+							<div style={{display: showExit === false ? 'block' : 'none' }} className="authDiv" id="vkAuth"></div>
 							<div style={{display: showExit ? 'block' : 'none' }} onClick={handleExit} className="exitDiv">
 								<div className="login-container">
 									<a href="#" className="github-login-button">
