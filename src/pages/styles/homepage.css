@@ -6,6 +6,12 @@
 	padding: 10px;
 }
 
+.header_user_info {
+	font-family: "Roboto", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
 .exitDiv {
 	color: black;
 	/* min-width: 210px; */
