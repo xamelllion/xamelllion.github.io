@@ -48,7 +48,7 @@ const vkFunc = (setText) => {
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
-			fetch(`https://xmllln.ru.app`, {
+			fetch(`https://xmllln.ru/vk`, {
 				method: 'POST',
 				body: JSON.stringify(data),
 				headers: {
