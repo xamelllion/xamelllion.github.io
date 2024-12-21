@@ -17,7 +17,7 @@ import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 
-const vkFunc = () => {
+const vkFunc = (setText) => {
 	if ('VKIDSDK' in window) {
 		const VKID = window.VKIDSDK;
 
@@ -58,6 +58,7 @@ const vkFunc = () => {
 			  .then(data => {
 				console.log(data)
 				localStorage.setItem('user', JSON.stringify(data))
+				setText(`Добрый день ${data.firstname} ${data.lastname}!`)
 			  })
 		}
 		
@@ -75,7 +76,7 @@ const Homepage = () => {
 	const [text, setText] = useState('');
 
 	useEffect(() => {
-		vkFunc()
+		vkFunc(setText)
 		let user_data = localStorage.getItem('user')
 		if (user_data != undefined) {
 			let info = JSON.parse(user_data)
