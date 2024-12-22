@@ -42,13 +42,16 @@ const vkFunc = (setText, setShowExit) => {
 			const deviceId = payload.device_id;
 			console.log(payload)
 
-			VKID.Auth.login(payload)
+			VKID.Auth.exchangeCode(payload)
 			.then(vkidOnSuccess)
 			.catch(vkidOnError);
 		});
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
+			let d = VKID.Auth.userInfo(data.access_token)
+			console.log(d)
+
 			// fetchJsonp(`https://api.vk.com/method/account.getProfileInfo?access_token=${data['access_token']}&v=5.199`, {
 			// 	jsonpCallback: "jsonp"
 			//   })
