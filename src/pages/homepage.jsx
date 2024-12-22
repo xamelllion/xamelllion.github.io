@@ -45,15 +45,15 @@ const vkFunc = (setText, setShowExit) => {
 			.then(vkidOnSuccess)
 			.catch(vkidOnError);
 		});
-		
+		function callbackFunc(result) {
+			console.log('hello')
+			console.log(result)
+		}
 		function vkidOnSuccess(data) {
 			var script = document.createElement('SCRIPT');
 			script.src = `https://api.vk.com/method/account.getProfileInfo?access_token=${data['access_token']}&v=5.199&callback=callbackFunc`;
 			document.getElementsByTagName("head")[0].appendChild(script);
-			function callbackFunc(result) {
-				console.log('hello')
-				console.log(result)
-			}
+			
 			console.log(data)
 			// fetch(`https://api.vk.com/method/account.getProfileInfo`, {
 			// 	method: 'POST',
