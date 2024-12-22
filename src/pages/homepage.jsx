@@ -23,7 +23,7 @@ const vkFunc = (setText, setShowExit) => {
 
 		VKID.Config.init({
 			app: 52871599,
-			redirectUrl: 'https://site.xmllln.ru/',
+			redirectUrl: 'https://xmllln.ru/',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
 			scope: '',
@@ -54,7 +54,7 @@ const vkFunc = (setText, setShowExit) => {
 			// .then((res) => res.json())
 			// .then((data) => console.log(data));
 
-			fetch(`https://xmllln.ru/vk`, {
+			fetch(`https://site.xmllln.ru/vk`, {
 				method: 'POST',
 				body: JSON.stringify(data),
 				headers: {
@@ -106,7 +106,7 @@ const Homepage = () => {
 		let code_param = searchParams.get("code")
 		if (code_param !== null) {
 			console.log(code_param)
-			fetch(`https://xmllln.ru/github`, {
+			fetch(`https://site.xmllln.ru/github`, {
 				method: 'POST',
 				body: JSON.stringify({
 					code: code_param
