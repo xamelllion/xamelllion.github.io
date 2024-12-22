@@ -114,6 +114,7 @@ const Homepage = () => {
 				headers: {
 				  "Content-Type": "application/json",
 				},
+				mode: 'no-cors'
 			  }).then(response =>response.json())
 			  .then(data => {
 				console.log(data)
