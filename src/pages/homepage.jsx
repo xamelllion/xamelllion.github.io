@@ -58,18 +58,18 @@ const vkFunc = (setText, setShowExit) => {
 				  "Content-Type": "application/json",
 				},
 				mode: 'no-cors'
-			  }).then(response =>response.json())
-			  .then(data => {
-				console.log(data)
-				let user_obj = {
-					status: 'ok',
-					name: `${data.response.first_name} ${data.response.last_name}`,
-					username: data.response.screen_name
-				}
-				localStorage.setItem('user', JSON.stringify(user_obj))
-				setText(`Добрый день ${user_obj.name}!`)
-				setShowExit(true)
-			  })
+			  }).then(response =>console.log(response))
+			//   .then(data => {
+			// 	console.log(data)
+			// 	let user_obj = {
+			// 		status: 'ok',
+			// 		name: `${data.response.first_name} ${data.response.last_name}`,
+			// 		username: data.response.screen_name
+			// 	}
+			// 	localStorage.setItem('user', JSON.stringify(user_obj))
+			// 	setText(`Добрый день ${user_obj.name}!`)
+			// 	setShowExit(true)
+			//   })
 		}
 		
 		function vkidOnError(error) {
