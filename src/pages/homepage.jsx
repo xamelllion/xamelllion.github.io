@@ -60,6 +60,7 @@ const vkFunc = (setText, setShowExit) => {
 				headers: {
 				  "Content-Type": "application/json",
 				},
+				mode: 'no-cors'
 			  }).then(response =>console.log(response))
 			  .then(data => {
 				console.log(data)
