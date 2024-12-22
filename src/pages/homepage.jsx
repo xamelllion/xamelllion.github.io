@@ -23,7 +23,7 @@ const vkFunc = (setText, setShowExit) => {
 
 		VKID.Config.init({
 			app: 52877645,
-			// redirectUrl: 'https://site.xmllln.ru/vk',
+			redirectUrl: 'https://xmllln.ru/',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
 			scope: '',
