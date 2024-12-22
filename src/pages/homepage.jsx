@@ -23,7 +23,7 @@ const vkFunc = (setText, setShowExit) => {
 
 		VKID.Config.init({
 			app: 52871599,
-			redirectUrl: 'https://xamelllion.ru/',
+			redirectUrl: 'https://xmllln.ru/vk',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
 			scope: '',
@@ -48,17 +48,17 @@ const vkFunc = (setText, setShowExit) => {
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
-			fetch(`https://api.vk.com/method/account.getProfileInfo`, {
-				method: 'POST',
-				body: JSON.stringify({
-					access_token: data['access_token'],
-					v: '5.199'
-				}),
-				headers: {
-				  "Content-Type": "application/json",
-				},
-				mode: 'no-cors'
-			  }).then(response =>console.log(response))
+			// fetch(`https://api.vk.com/method/account.getProfileInfo`, {
+			// 	method: 'POST',
+			// 	body: JSON.stringify({
+			// 		access_token: data['access_token'],
+			// 		v: '5.199'
+			// 	}),
+			// 	headers: {
+			// 	  "Content-Type": "application/json",
+			// 	},
+			// 	mode: 'no-cors'
+			//   }).then(response =>console.log(response))
 			//   .then(data => {
 			// 	console.log(data)
 			// 	let user_obj = {
