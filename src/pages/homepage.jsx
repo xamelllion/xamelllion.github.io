@@ -49,8 +49,8 @@ const vkFunc = (setText, setShowExit) => {
 		
 		function vkidOnSuccess(data) {
 			console.log(data)
-			let d = VKID.Auth.userInfo(data.access_token)
-			console.log(d)
+			VKID.Auth.userInfo(data.access_token)
+			.then(data => console.log(data))
 
 			// fetchJsonp(`https://api.vk.com/method/account.getProfileInfo?access_token=${data['access_token']}&v=5.199`, {
 			// 	jsonpCallback: "jsonp"
