@@ -40,7 +40,6 @@ const vkFunc = (setText, setShowExit) => {
 		.on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
 			const code = payload.code;
 			const deviceId = payload.device_id;
-			// console.log(payload)
 
 			VKID.Auth.exchangeCode(code, deviceId)
 			.then(vkidOnSuccess)
@@ -50,32 +49,16 @@ const vkFunc = (setText, setShowExit) => {
 		function vkidOnSuccess(data) {
 			console.log(data)
 			VKID.Auth.userInfo(data.access_token)
-			.then(data => console.log(data))
-
-			// fetchJsonp(`https://api.vk.com/method/account.getProfileInfo?access_token=${data['access_token']}&v=5.199`, {
-			// 	jsonpCallback: "jsonp"
-			//   })
-			// .then((res) => res.json())
-			// .then((data) => console.log(data));
-
-			// fetch(`https://site.xmllln.ru/vk`, {
-			// 	method: 'POST',
-			// 	body: JSON.stringify(data),
-			// 	headers: {
-			// 	  "Content-Type": "application/json",
-			// 	},
-			//   }).then(response =>console.log(response))
-			//   .then(data => {
-			// 	console.log(data)
-			// 	let user_obj = {
-			// 		status: 'ok',
-			// 		name: `${data.response.first_name} ${data.response.last_name}`,
-			// 		username: data.response.screen_name
-			// 	}
-			// 	localStorage.setItem('user', JSON.stringify(user_obj))
-			// 	setText(`Добрый день ${user_obj.name}!`)
-			// 	setShowExit(true)
-			//   })
+			.then(data => {
+				let user_obj = {
+					status: 'ok',
+					name: `${data.user.first_name} ${data.user.last_name}`,
+					username: ''
+				}
+				localStorage.setItem('user', JSON.stringify(user_obj))
+				setText(`Добрый день ${user_obj.name}!`)
+				setShowExit(true)
+			})
 		}
 
 		function vkidOnError(error) {
