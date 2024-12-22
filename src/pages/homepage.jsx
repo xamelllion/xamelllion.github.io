@@ -40,9 +40,9 @@ const vkFunc = (setText, setShowExit) => {
 		.on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
 			const code = payload.code;
 			const deviceId = payload.device_id;
-			console.log(payload)
+			// console.log(payload)
 
-			VKID.Auth.exchangeCode(payload)
+			VKID.Auth.exchangeCode(code, deviceId)
 			.then(vkidOnSuccess)
 			.catch(vkidOnError);
 		});
