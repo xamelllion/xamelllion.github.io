@@ -54,24 +54,24 @@ const vkFunc = (setText, setShowExit) => {
 			// .then((res) => res.json())
 			// .then((data) => console.log(data));
 
-			fetch(`https://site.xmllln.ru/vk`, {
-				method: 'POST',
-				body: JSON.stringify(data),
-				headers: {
-				  "Content-Type": "application/json",
-				},
-			  }).then(response =>console.log(response))
-			  .then(data => {
-				console.log(data)
-				let user_obj = {
-					status: 'ok',
-					name: `${data.response.first_name} ${data.response.last_name}`,
-					username: data.response.screen_name
-				}
-				localStorage.setItem('user', JSON.stringify(user_obj))
-				setText(`Добрый день ${user_obj.name}!`)
-				setShowExit(true)
-			  })
+			// fetch(`https://site.xmllln.ru/vk`, {
+			// 	method: 'POST',
+			// 	body: JSON.stringify(data),
+			// 	headers: {
+			// 	  "Content-Type": "application/json",
+			// 	},
+			//   }).then(response =>console.log(response))
+			//   .then(data => {
+			// 	console.log(data)
+			// 	let user_obj = {
+			// 		status: 'ok',
+			// 		name: `${data.response.first_name} ${data.response.last_name}`,
+			// 		username: data.response.screen_name
+			// 	}
+			// 	localStorage.setItem('user', JSON.stringify(user_obj))
+			// 	setText(`Добрый день ${user_obj.name}!`)
+			// 	setShowExit(true)
+			//   })
 		}
 
 		function vkidOnError(error) {
