@@ -23,7 +23,7 @@ const vkFunc = (setText, setShowExit) => {
 
 		VKID.Config.init({
 			app: 52871599,
-			redirectUrl: 'https://xamelllion.ru/',
+			redirectUrl: 'https://site.xmllln.ru/',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
 			scope: '',
@@ -74,7 +74,7 @@ const vkFunc = (setText, setShowExit) => {
 				setShowExit(true)
 			  })
 		}
-		
+
 		function vkidOnError(error) {
 			console.log(error)
 		}
