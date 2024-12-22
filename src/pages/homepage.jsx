@@ -45,38 +45,30 @@ const vkFunc = (setText, setShowExit) => {
 			.then(vkidOnSuccess)
 			.catch(vkidOnError);
 		});
-		function callbackFunc(result) {
-			console.log('hello')
-			console.log(result)
-		}
+		
 		function vkidOnSuccess(data) {
-			var script = document.createElement('SCRIPT');
-			script.src = `https://api.vk.com/method/account.getProfileInfo?access_token=${data['access_token']}&v=5.199&callback=callbackFunc`;
-			document.getElementsByTagName("head")[0].appendChild(script);
-			
 			console.log(data)
-			// fetch(`https://api.vk.com/method/account.getProfileInfo`, {
-			// 	method: 'POST',
-			// 	body: JSON.stringify({
-			// 		access_token: data['access_token'],
-			// 		v: '5.199'
-			// 	}),
-			// 	headers: {
-			// 	  "Content-Type": "application/json",
-			// 	},
-			// 	mode: 'no-cors'
-			//   }).then(response =>console.log(response))
-			//   .then(data => {
-			// 	console.log(data)
-			// 	let user_obj = {
-			// 		status: 'ok',
-			// 		name: `${data.response.first_name} ${data.response.last_name}`,
-			// 		username: data.response.screen_name
-			// 	}
-			// 	localStorage.setItem('user', JSON.stringify(user_obj))
-			// 	setText(`Добрый день ${user_obj.name}!`)
-			// 	setShowExit(true)
-			//   })
+			fetch(`https://api.vk.com/method/account.getProfileInfo`, {
+				method: 'POST',
+				body: JSON.stringify({
+					access_token: data['access_token'],
+					v: '5.199'
+				}),
+				headers: {
+				  "Content-Type": "application/json",
+				},
+			  }).then(response =>console.log(response))
+			  .then(data => {
+				console.log(data)
+				let user_obj = {
+					status: 'ok',
+					name: `${data.response.first_name} ${data.response.last_name}`,
+					username: data.response.screen_name
+				}
+				localStorage.setItem('user', JSON.stringify(user_obj))
+				setText(`Добрый день ${user_obj.name}!`)
+				setShowExit(true)
+			  })
 		}
 		
 		function vkidOnError(error) {
