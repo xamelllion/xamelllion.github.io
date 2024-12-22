@@ -42,7 +42,7 @@ const vkFunc = (setText, setShowExit) => {
 			const deviceId = payload.device_id;
 			console.log(payload)
 
-			VKID.Auth.exchangeCode(code, deviceId)
+			VKID.Auth.login(payload)
 			.then(vkidOnSuccess)
 			.catch(vkidOnError);
 		});
