@@ -11,3 +11,7 @@
 .add_comment {
     padding: 10px 10px 10px 0;
 }
+
+.comment_item {
+    margin-bottom: 7px;
+}

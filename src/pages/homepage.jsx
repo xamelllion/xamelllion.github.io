@@ -243,7 +243,7 @@ const Homepage = () => {
 							</div>
 						</div>
 						<div className="page-footer">
-							<CommentSection/>
+							<CommentSection isAuthorized={showExit}/>
 						</div>
 						<div className="page-footer">
 							<Footer />
