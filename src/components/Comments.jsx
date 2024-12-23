@@ -38,6 +38,10 @@ const CommentSection = (isAuthorized) => {
 
     const handleSendClick = () => {
         console.log(input)
+        if (input === '') {
+            return
+        }
+
         let user = JSON.parse(localStorage.getItem('user'))
         let comment_obj = {
             name: user.name,
