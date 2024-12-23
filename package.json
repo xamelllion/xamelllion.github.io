@@ -10,6 +10,8 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
+		"@chakra-ui/react": "^3.2.3",
+		"@emotion/react": "^11.14.0",
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
 		"@fortawesome/free-regular-svg-icons": "^6.4.0",

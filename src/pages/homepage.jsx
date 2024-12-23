@@ -11,6 +11,7 @@ import Footer from "../components/common/footer";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
+import CommentSection from "../components/Comments";
 
 import INFO from "../data/user";
 import myArticles from "../data/articles";
@@ -50,6 +51,7 @@ const vkFunc = (setText, setShowExit) => {
 			console.log(data)
 			VKID.Auth.userInfo(data.access_token)
 			.then(data => {
+				console.log(data)
 				let user_obj = {
 					status: 'ok',
 					name: `${data.user.first_name} ${data.user.last_name}`,
@@ -240,7 +242,9 @@ const Homepage = () => {
 								<Works />
 							</div>
 						</div>
-
+						<div className="page-footer">
+							<CommentSection/>
+						</div>
 						<div className="page-footer">
 							<Footer />
 						</div>

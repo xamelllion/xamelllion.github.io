@@ -1,0 +1,13 @@
+.comment_item {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.comment_author {
+    margin: 0;
+    margin-bottom: 7px;
+}
+.add_comment {
+    padding: 10px 10px 10px 0;
+}
