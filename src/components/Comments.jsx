@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './comments.css';
+import '../data/styles.css'
 
 const CommentSection = (isAuthorized) => {
     console.log('weger')
@@ -53,9 +54,9 @@ const CommentSection = (isAuthorized) => {
             <div className="comment_wrapper">
                 <div className="comment_header">Комментарии</div>
                 <div style={{display: isAuthorized.isAuthorized ? 'none' : 'block' }} className="comment_about">Чтобы оставить комментарий авторизуйтесь через социальную сеть!</div>
-                <div style={{display: isAuthorized.isAuthorized ? 'block' : 'none' }} className="add_comment">
-                    <input type="text" placeholder="Введите текст" value={input} onChange={(e) => {setInput(e.target.value)}}/>
-                    <input type="button" value="Отправить" onClick={handleSendClick} />
+                <div style={{display: isAuthorized.isAuthorized ? 'flex' : 'none' }} className="add_comment">
+                    <input maxLength={1024} className="comments_input" type="text" placeholder="Введите текст" value={input} onChange={(e) => {setInput(e.target.value)}}/>
+                    <input className="comments_send" type="button" value="Отправить" onClick={handleSendClick} />
                 </div>
                 <div className="comment_list">
                     {comments.map((item, index) => (

@@ -58,7 +58,7 @@ const vkFunc = (setText, setShowExit) => {
 					username: ''
 				}
 				localStorage.setItem('user', JSON.stringify(user_obj))
-				setText(`Добрый день ${user_obj.name}!`)
+				setText(`Добрый день, ${user_obj.name}!`)
 				setShowExit(true)
 			})
 		}
@@ -85,7 +85,7 @@ const Homepage = () => {
 		let user_data = localStorage.getItem('user')
 		if (user_data !== null) {
 			let info = JSON.parse(user_data)
-			setText(`Добрый день ${info.name}!`)
+			setText(`Добрый день, ${info.name}!`)
 			setShowExit(true)
 		}
 	}, []);
@@ -106,7 +106,7 @@ const Homepage = () => {
 			  .then(data => {
 				console.log(data)
 				localStorage.setItem('user', JSON.stringify(data))
-				setText(`Добрый день ${data.name}!`)
+				setText(`Добрый день, ${data.name}!`)
 				setShowExit(true)
 			  })
 		}
@@ -242,7 +242,7 @@ const Homepage = () => {
 								<Works />
 							</div>
 						</div>
-						<div className="page-footer">
+						<div className="">
 							<CommentSection isAuthorized={showExit}/>
 						</div>
 						<div className="page-footer">
